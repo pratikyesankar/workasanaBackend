@@ -1,68 +1,117 @@
-# Anvaya
-A full-stack CRM app for lead management, allowing users to create, track, update, and visualize leads with sales agent assignment and reporting.
-Built with a React frontend, Express/Node backend, MongoDB database, and Chart.js for visualizations.
+ # WorkAsana
+## Project Overview
+WorkAsana is a full-stack task and project management application designed to streamline team collaboration and task tracking. It provides a user-friendly interface for managing tasks, teams, and projects with robust filtering, reporting, and visualization features. Built with a modern tech stack, WorkAsana ensures scalability, security, and an intuitive user experience.
 
----
 ## Demo Link
-[Live Demo] (Replace with actual demo link)
+[Live demo] (vercel-link)
 
----
+## Login
+
+> **Guest Credentials**  
+> Password: supersecretadmin   
 
 Quick Start
-git clone https://github.com/<your-username>/anvaya.git
-cd anvaya
+
+```
+git clone https://github.com/pratikyesankar/workasanaFrontend.git
+cd workasanaFrontend
 npm install
-npm run dev      # or `npm start` / `yarn dev`
+npm run dev      
+```
+## Technologies
 
-Technologies
+- React JS  
+- React Router  
+- Vite  
+- Axios  
+- Bootstrap  
+- Chart.js  
+- Node.js  
+- Express  
+- MongoDB  
+- Mongoose  
+- JWT  
+- bcrypt
 
--React JS  
--React Router  
--Node.js  
--Express  
--MongoDB  
--Chart.js
+## Demo Video
+Watch a walkthrough (5–7 minutes) of all major features of this app: Loom Video Link
 
-Demo Video
-Watch a walkthrough (5–7 minutes) of all major features of this app: Loom Video Link (Replace with actual video link)
-Features
-Lead Management
+## Features
 
-Create and manage leads with details like name, source, status, and priority  
-Assign leads to sales agents and track their progress
+**Home**
+- Displays a list of all tasks with real-time filtering by owner, team, tags, project, or status.  
+- URL-based filtering (e.g., /tasks?team=development&tags=Urgent).
 
-Lead Listing
+**Task  Listing**
+- Paginated task list with sorting options for completion dates or priority.  
+- “Add New Task” button opens a form to create tasks with fields for task name, project, team, owners, tags, time to complete, and status.
 
-Filter leads by sales agent, status, tags, or source  
-Sort leads by priority or estimated closing date
+**Task  Details**
+- View detailed task information, including project, team, owners, tags, time to complete, and status (To Do, In Progress, Completed, Blocked).  
+- “Edit Task” button to update task details or status.
 
-Lead Details
+**Authentication**
+User signup and login with JWT-based authentication, storing tokens in localStorage.  
+Protected routes ensure only authenticated users can add, edit, or delete tasks.  
+Logout clears the JWT token and redirects to the login page.
 
-View detailed lead information (status, tags, time to close, etc.)  
-Add comments to track progress with author and timestamp
+## API Reference
 
-Reports and Visualizations
+### **GET /api/tasks**<br>  
 
-Visualize leads closed last week, total pipeline, and distribution by status  
-View sales agent performance with Chart.js-powered bar and pie charts
+List all tasks with optional filters (team, owner, tags, project, status).  
+Sample Response:<br>
+```[{ "_id": "123", "name": "Design Wireframes", "project": "Website Redesign", "team": "Development", "status": "In Progress", ... }, ...]```
 
-URL-Based Filtering
+### **GET /api/projects**<br>    
 
-Filter leads via URL (e.g., /leads?salesAgent=John&status=Qualified)  
-Combine multiple filters for precise lead views
+List all projects.  
+Sample Response:<br>
+```[{ "_id": "64c34512f7a60e36df44", "name": "Website Redesign", "description": "Redesign company website" }, ...]```
 
-API Reference
-POST /leads
-Create a new leadRequest Body: { name, source, salesAgent, status, tags, timeToClose, priority }Sample Response: { id, name, source, salesAgent, status, ... }
-GET /leads
-List all leads with filteringExample: /leads?salesAgent=64c34512f7a60e36df44&status=NewSample Response: [{ id, name, source, salesAgent, status, ... }, ...]
-PUT /leads/:id
-Update a leadRequest Body: { name, source, salesAgent, status, tags, timeToClose, priority }Sample Response: { id, name, source, salesAgent, status, ... }
-DELETE /leads/:id
-Delete a leadSample Response: { message: "Lead deleted successfully." }
-POST /agents
-Add a new sales agentRequest Body: { name, email }Sample Response: { id, name, email, createdAt }
-GET /report/last-week
-Fetch leads closed in the last 7 daysSample Response: [{ id, name, salesAgent, closedAt }, ...]
-Contact
-For bugs or feature requests, please reach out to akanksha.xxx@gmail.com
+
+### **GET /api/teams**<br>  
+
+List all teams.  
+Sample Response:<br>
+```[{ "_id": "64c99a47b74e58d3b213", "name": "Development", "description": "Handles development tasks" }, ...]```
+
+
+### **POST /api/auth/signup**<br>   
+
+Register a new user with password hashing (bcrypt).  
+Sample Response:<br>
+``` { "userId": "456", "token": "jwt_token" } ```
+
+### **POST /api/auth/login**<br>   
+
+Authenticate a user and issue a JWT token.  
+Sample Response:<br>
+``` { "userId": "456", "token": "jwt_token" } ```
+
+### **POST /api/teams**<br>   
+
+Create a new team.  
+Sample Response:<br>
+``` { "_id": "64c99a47b74e58d3b213", "name": "Development", "description": "Handles development tasks" } ```
+
+### **POST /api/tasks**<br>    
+
+Create a new task (protected).  
+Sample Response:<br>
+``` { "_id": "123", "name": "Design Wireframes", "project": "Website Redesign", ... } ```
+
+### **POST /api/projects**<br>    
+
+Create a new project.  
+Sample Response:<br>
+``` { "_id": "64c34512f7a60e36df44", "name": "Website Redesign", "description": "Redesign company website" } ```
+
+### **GET /api/report/last-week**<br>    
+
+Fetch tasks completed in the last 7 days.  
+Sample Response:  [{ "_id": "123", "name": "Design Wireframes", "status": "Completed", ... }, ...]
+
+
+## Contact
+For bugs or feature requests, please reach out to pratikyesankar17.@gmail.com.
