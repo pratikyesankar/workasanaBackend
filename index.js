@@ -18,7 +18,7 @@ const Team = require("./models/team.model");
 const Task = require("./models/task.model");
 
 // Middleware
-app.use(cors({ origin: process.env.FRONTEND_URL || "http://localhost:5173" }));
+app.use(cors({ origin: process.env.FRONTEND_URL || "http://localhost:5174" }));
 app.use(express.json());
 
 // Initialize database
