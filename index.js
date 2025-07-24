@@ -19,6 +19,13 @@ initializeDatabase();
 
 app.use(cors());
 app.use(express.json());
+ 
+// app.use(cors({
+//   origin: 'http://localhost:5173' 
+// }));
+app.use(cors({
+  origin: 'https://frontend-workasana-p6hf.vercel.app'  
+}));
 
 // ----------------------------------------------------------------------------------------------------------
  const verifyJWT = (req, res, next) => {
