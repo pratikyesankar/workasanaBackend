@@ -1,9 +1,9 @@
- # WorkAsana
+  # WorkAsana
 ## Project Overview
 WorkAsana is a full-stack task and project management application designed to streamline team collaboration and task tracking. It provides a user-friendly interface for managing tasks, teams, and projects with robust filtering, reporting, and visualization features. Built with a modern tech stack, WorkAsana ensures scalability, security, and an intuitive user experience.
 
 ## Demo Link
-[Live demo] (vercel-link)
+([Live Demo](https://frontend-workasana-p6hf.vercel.app/login))
 
 ## Login
 
@@ -13,7 +13,7 @@ WorkAsana is a full-stack task and project management application designed to st
 Quick Start
 
 ```
-git clone https://github.com/pratikyesankar/workasanaFrontend.git
+git clone (https://github.com/pratikyesankar/frontendWorkasana)
 cd workasanaFrontend
 npm install
 npm run dev      
