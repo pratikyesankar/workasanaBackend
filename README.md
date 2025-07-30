@@ -1,117 +1,76 @@
-  # WorkAsana
+# Devloper Portfolio
+
 ## Project Overview
-WorkAsana is a full-stack task and project management application designed to streamline team collaboration and task tracking. It provides a user-friendly interface for managing tasks, teams, and projects with robust filtering, reporting, and visualization features. Built with a modern tech stack, WorkAsana ensures scalability, security, and an intuitive user experience.
+DevPortfolio is a responsive full-stack developer portfolio website that showcases professional skills, projects, tech stack, and contact information. Built with a modern React and Node.js stack, it provides an interactive way for recruiters and visitors to explore the developer's experience and work.
+
+The portfolio includes real-time project rendering, backend integration for dynamic data, and elegant UI with dark mode for a better viewing experience.
 
 ## Demo Link
-([Live Demo](https://frontend-workasana-p6hf.vercel.app/login))
+[Live Portfolio](https://post-folio-frontend.vercel.app)
 
-## Login
-
-> **Guest Credentials**  
-> Password: supersecretadmin   
-
-Quick Start
+## Quick Start
 
 ```
-git clone (https://github.com/pratikyesankar/frontendWorkasana)
-cd workasanaFrontend
+git clone [https://github.com/pratikyesankar/post-folio-frontend](https://github.com/pratikyesankar/postFolioFrontend)
+cd post-folio-frontend
 npm install
-npm run dev      
+npm run dev
 ```
+
+
 ## Technologies
 
-- React JS  
+**Frontend**
+- React.js  
+- Tailwind CSS  
+- Axios  
 - React Router  
 - Vite  
-- Axios  
-- Bootstrap  
-- Chart.js  
+
+**Backend**
 - Node.js  
-- Express  
+- Express.js  
 - MongoDB  
 - Mongoose  
-- JWT  
-- bcrypt
+- CORS  
 
-## Demo Video
-Watch a walkthrough (5–7 minutes) of all major features of this app: Loom Video Link
+**Deployment**
+- Vercel (Frontend)  
+- Render (Backend)
 
 ## Features
 
-**Home**
-- Displays a list of all tasks with real-time filtering by owner, team, tags, project, or status.  
-- URL-based filtering (e.g., /tasks?team=development&tags=Urgent).
+**Landing Page**
+- Intro section with name, role, and tech specialization.
+- CTA buttons for contact and resume.
 
-**Task  Listing**
-- Paginated task list with sorting options for completion dates or priority.  
-- “Add New Task” button opens a form to create tasks with fields for task name, project, team, owners, tags, time to complete, and status.
+**Projects Section**
+- Dynamically displays project cards from backend.
+- Each card includes project title, tech stack, description, and link.
 
-**Task  Details**
-- View detailed task information, including project, team, owners, tags, time to complete, and status (To Do, In Progress, Completed, Blocked).  
-- “Edit Task” button to update task details or status.
+**Tech Stack Section**
+- Icons and names of key technologies used in frontend and backend development.
 
-**Authentication**
-User signup and login with JWT-based authentication, storing tokens in localStorage.  
-Protected routes ensure only authenticated users can add, edit, or delete tasks.  
-Logout clears the JWT token and redirects to the login page.
+**Contact Section**
+- Contact form to send messages (optional email integration).
+- Links to GitHub, LinkedIn, and resume.
+
+**Responsive Design**
+- Fully optimized for desktop, tablet, and mobile devices.
 
 ## API Reference
 
-### **GET /api/tasks**<br>  
-
-List all tasks with optional filters (team, owner, tags, project, status).  
-Sample Response:<br>
-```[{ "_id": "123", "name": "Design Wireframes", "project": "Website Redesign", "team": "Development", "status": "In Progress", ... }, ...]```
-
-### **GET /api/projects**<br>    
-
-List all projects.  
-Sample Response:<br>
-```[{ "_id": "64c34512f7a60e36df44", "name": "Website Redesign", "description": "Redesign company website" }, ...]```
-
-
-### **GET /api/teams**<br>  
-
-List all teams.  
-Sample Response:<br>
-```[{ "_id": "64c99a47b74e58d3b213", "name": "Development", "description": "Handles development tasks" }, ...]```
-
-
-### **POST /api/auth/signup**<br>   
-
-Register a new user with password hashing (bcrypt).  
-Sample Response:<br>
-``` { "userId": "456", "token": "jwt_token" } ```
-
-### **POST /api/auth/login**<br>   
-
-Authenticate a user and issue a JWT token.  
-Sample Response:<br>
-``` { "userId": "456", "token": "jwt_token" } ```
-
-### **POST /api/teams**<br>   
-
-Create a new team.  
-Sample Response:<br>
-``` { "_id": "64c99a47b74e58d3b213", "name": "Development", "description": "Handles development tasks" } ```
-
-### **POST /api/tasks**<br>    
-
-Create a new task (protected).  
-Sample Response:<br>
-``` { "_id": "123", "name": "Design Wireframes", "project": "Website Redesign", ... } ```
-
-### **POST /api/projects**<br>    
-
-Create a new project.  
-Sample Response:<br>
-``` { "_id": "64c34512f7a60e36df44", "name": "Website Redesign", "description": "Redesign company website" } ```
-
-### **GET /api/report/last-week**<br>    
-
-Fetch tasks completed in the last 7 days.  
-Sample Response:  [{ "_id": "123", "name": "Design Wireframes", "status": "Completed", ... }, ...]
-
-
-## Contact
-For bugs or feature requests, please reach out to pratikyesankar17.@gmail.com.
+### **GET /api/projects**
+Retrieve all portfolio projects.  
+**Sample Response:**
+```json
+[
+  {
+    "title": "Workasana",
+    "description": "A modern e-commerce platform with real-time inventory management, secure payment processing, and personalized recommendations.",
+    "techStack": ["React", "Node.js", "Chart.js"],
+    "demoLink": "https://frontend-workasana-p6hf.vercel.app/signup",
+    "codeLink": "https://github.com/pratikyesankar/frontendWorkasana",
+    "image": "https://images.pexels.com/photos/12193264/pexels-photo-12193264.jpeg"
+  }
+]
